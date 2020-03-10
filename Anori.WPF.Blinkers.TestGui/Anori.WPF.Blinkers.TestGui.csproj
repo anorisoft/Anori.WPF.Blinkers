@@ -5,4 +5,8 @@
     <TargetFramework>net48</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Anori.WPF.Blinkers\Anori.WPF.Blinkers.csproj" />
+  </ItemGroup>
 </Project>

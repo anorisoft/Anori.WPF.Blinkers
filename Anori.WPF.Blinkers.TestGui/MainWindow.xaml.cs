@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Anori.WPF.Blinkers.Services;
 
 namespace Anori.WPF.Blinkers.TestGui
 {
@@ -23,6 +24,7 @@ namespace Anori.WPF.Blinkers.TestGui
         public MainWindow()
         {
             InitializeComponent();
+            BlinkingService.AddProvider(Colors.Blue.ToString(), new BrushesBlinkingProvider(Colors.Blue));
         }
     }
 }

@@ -34,6 +34,7 @@ namespace Anori.WPF.Blinkers.Services
         [NotNull]
         private static IBlinkingProvider defaultProvider = new BlinkingProvider();
 
+     
         /// <summary>
         ///     Gets or sets the default provider.
         /// </summary>
@@ -82,7 +83,11 @@ namespace Anori.WPF.Blinkers.Services
                 throw new ArgumentNullException(nameof(provider));
             }
 
-            InternalProviders.Add(name.ToLower(), provider);
+            if (!InternalProviders.ContainsKey(name.ToLower()))
+            {            InternalProviders.Add(name.ToLower(), provider);
+
+            }
+
         }
 
         /// <summary>

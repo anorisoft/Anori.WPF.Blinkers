@@ -11,31 +11,27 @@ namespace Anori.WPF.Blinkers.Services
     /// <summary>
     ///     Blinking provider interface.
     /// </summary>
-    public interface IBlinkingProvider
+    public interface IBrushesBlinkingProvider : IBlinkingProvider
     {
         /// <summary>
-        ///     Gets a value indicating whether [blinking beat].
+        ///     Gets the blinking brush.
         /// </summary>
         /// <value>
-        ///     <c>true</c> if [blinking beat]; otherwise, <c>false</c>.
+        ///     The blinking brush.
         /// </value>
-        bool BlinkingBeat { get; }
+        Brush BlinkingBrush { get; }
+    }
 
-        /// <summary>
+    
+
+    public interface IOpacityBlinkingProvider : IBlinkingProvider
+    {  /// <summary>
         ///     Gets the opacity beat.
         /// </summary>
         /// <value>
         ///     The opacity beat.
         /// </value>
         double OpacityBeat { get; }
-
-        /// <summary>
-        ///     Gets or sets the blinking interval time.
-        /// </summary>
-        /// <value>
-        ///     The blinking interval time.
-        /// </value>
-        int BlinkingIntervalTime { get; set; }
 
         /// <summary>
         ///     Gets or sets the opacity frame time.
@@ -52,13 +48,30 @@ namespace Anori.WPF.Blinkers.Services
         ///     The opacity ramp time.
         /// </value>
         int OpacityRampTime { get; set; }
+    }
+
+    public interface IBlinkingProvider
+        {
+            /// <summary>
+            ///     Gets a value indicating whether [blinking beat].
+            /// </summary>
+            /// <value>
+            ///     <c>true</c> if [blinking beat]; otherwise, <c>false</c>.
+            /// </value>
+            bool BlinkingBeat { get; }
+
+      
 
         /// <summary>
-        ///     Gets the blinking brush.
+        ///     Gets or sets the blinking interval time.
         /// </summary>
         /// <value>
-        ///     The blinking brush.
+        ///     The blinking interval time.
         /// </value>
-        Brush BlinkingBrush { get; }
+        int BlinkingIntervalTime { get; set; }
+
+       
+
+
     }
 }

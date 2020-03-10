@@ -1,15 +1,9 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="LedControl.cs" company="bfa solutions ltd">
-// Copyright (c) bfa solutions ltd. All rights reserved.
-// </copyright>
-// -----------------------------------------------------------------------
-
-namespace Anori.WPF.Blinkers
+﻿namespace Anori.WPF.Blinkers
 {
+    using Anori.WPF.Blinkers.Services;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media;
-    using Anori.WPF.Blinkers.Services;
 
     /// <summary>
     ///     The Led Control class
@@ -44,7 +38,14 @@ namespace Anori.WPF.Blinkers
             nameof(BlinkingColor),
             typeof(Color),
             typeof(LedControl),
-            new PropertyMetadata(Colors.Yellow));
+            new PropertyMetadata(Colors.Yellow, PropertyChangedCallback));
+
+        private static void PropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+          var provider = new BrushesBlinkingProvider(((Color)e.NewValue));
+          BlinkingService.AddProvider(((Color)e.NewValue).ToString(), provider);
+          ((LedControl)d).BlinkingProvider = provider;
+        }
 
         /// <summary>
         ///     The is blinking property

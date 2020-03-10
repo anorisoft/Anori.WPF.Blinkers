@@ -2,12 +2,52 @@
     x:Class="Anori.WPF.Blinkers.TestGui.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:blinkers="clr-namespace:Anori.WPF.Blinkers;assembly=Anori.WPF.Blinkers"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:Anori.WPF.Blinkers.TestGui"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:services="clr-namespace:Anori.WPF.Blinkers.Services;assembly=Anori.WPF.Blinkers"
     Title="MainWindow"
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <Grid />
+    <WrapPanel>
+        <blinkers:LedControl
+            Height="50"
+            IsBlinking="True"
+            OffColor="Aqua" />
+        <blinkers:LedControl
+            Height="50"
+            IsBlinking="True"
+            OnColor="BlueViolet" />
+        <blinkers:LedControl
+            Height="50"
+            BlinkingColor="Blue"
+            BlinkingProvider="{Binding Path=[Blue], Source={x:Static services:BlinkingService.Providers}}"
+            IsBlinking="True" />
+        <blinkers:LedControl
+            Height="50"
+            BlinkingColor="Blue"
+            IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+        <blinkers:LedControl Height="50" IsBlinking="True" />
+    </WrapPanel>
 </Window>

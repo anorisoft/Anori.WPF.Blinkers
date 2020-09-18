@@ -44,6 +44,9 @@ namespace Anori.WPF.Blinkers.Services
         /// </summary>
         private int blinkingIntervalTime = DefaultBlinkingIntervalTime;
 
+        /// <summary>
+        /// The client
+        /// </summary>
         private BrushBlinkingClient client;
 
         /// <summary>

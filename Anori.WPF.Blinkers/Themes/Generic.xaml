@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:b="Anori.WPF.Binkers"
     xmlns:blinkers="clr-namespace:Anori.WPF.Blinkers">
 
     <ControlTemplate x:Key="LedControlTemplate" TargetType="blinkers:LedControl">

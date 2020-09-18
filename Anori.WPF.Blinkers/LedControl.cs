@@ -40,11 +40,19 @@
             typeof(LedControl),
             new PropertyMetadata(Colors.Yellow, PropertyChangedCallback));
 
+        /// <summary>
+        /// Properties the changed callback.
+        /// </summary>
+        /// <param name="d">The d.</param>
+        /// <param name="e">The <see cref="DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
         private static void PropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-          var provider = new BrushesBlinkingProvider(((Color)e.NewValue));
-          BlinkingService.AddProvider(((Color)e.NewValue).ToString(), provider);
-          ((LedControl)d).BlinkingProvider = provider;
+            if (!BlinkingService.Providers.TryGetValue(((Color) e.NewValue).ToString(), out var provider))
+            {
+                provider = new BrushesBlinkingProvider((Color) e.NewValue);
+                BlinkingService.AddProvider(((Color) e.NewValue).ToString(), provider);
+            }
+            ((LedControl)d).BlinkingProvider = provider;
         }
 
         /// <summary>

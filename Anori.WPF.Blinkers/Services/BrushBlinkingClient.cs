@@ -65,7 +65,7 @@ namespace Anori.WPF.Blinkers.Services
         {
             BlinkingBrush = new SolidColorBrush { Color = Colors.Transparent };
             rampTime = DefaultRampTime;
-           this.color = color;
+            this.color = color;
             UpdateAnimations();
         }
         /// <summary>
